@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    const validateEmail = (email) => {
+    const validasiEmail = (email) => {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     };
 
-    const loginForm = document.getElementById('formLogin');
+    const loginForm = document.getElementById('form-login'); 
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault(); 
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            if (!validateEmail(email)) {
+            if (!validasiEmail(email)) {
                 tampilPesan('Format email tidak valid.', 'error');
                 return;
             }
@@ -35,23 +35,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 tampilPesan('Login berhasil! Anda akan diarahkan ke halaman utama...', 'success');
                 setTimeout(() => {
                     window.location.href = 'index.html';
-                }, 2000); // Tunggu 2 detik sebelum redirect
+                }, 2000);
             } else {
                 tampilPesan('Email atau kata sandi yang Anda masukkan salah.', 'error');
             }
         });
     }
 
-    const signupForm = document.getElementById('formSignup');
+    const signupForm = document.getElementById('form-signup');
     if (signupForm) {
         signupForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const fullName = document.getElementById('namaLengkap').value.trim();
+            // DIUBAH: sesuaikan semua id dengan HTML baru
+            const fullName = document.getElementById('nama-lengkap').value.trim();
             const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('noTelp').value.trim();
+            const phone = document.getElementById('no-telepon').value.trim();
             const password = document.getElementById('password').value.trim();
-            const confirmPassword = document.getElementById('confirmPassword').value.trim();
+            const confirmPassword = document.getElementById('konfirmasi-pw').value.trim();
 
             if (!fullName || !email || !phone || !password || !confirmPassword) {
                 tampilPesan('Semua kolom wajib diisi.', 'error');
@@ -67,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            if (!validateEmail(email)) {
+            if (!validasiEmail(email)) {
                 tampilPesan('Format email tidak valid.', 'error');
                 return;
             }
