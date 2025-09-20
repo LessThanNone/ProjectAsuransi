@@ -399,55 +399,57 @@ form button:hover {
     margin: 0 auto;
 }
 
-.list-manfaat li {
-    position: relative;         /* Kunci untuk penempatan ikon */
-    padding-left: 35px;         /* Memberi ruang di kiri untuk ikon */
+/* --- Penyeragaman Gaya Daftar di Halaman Detail --- */
+
+/* Aturan dasar untuk semua daftar */
+.list-manfaat,
+.list-claim-info,
+.list-syarat {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 20px; /* Padding dasar untuk semua */
+}
+
+/* Aturan untuk setiap item di dalam daftar */
+.list-manfaat li,
+.list-claim-info li,
+.list-syarat li {
+    font-size: 1.1rem;      /* UKURAN FONT DISERAGAMKAN */
+    line-height: 1.8;       /* JARAK ANTAR BARIS DISERAGAMKAN */
     margin-bottom: 20px;
-    font-size: 1.1rem;
-    line-height: 1.6;
     text-align: justify;
+}
+
+/* Aturan khusus untuk daftar yang menggunakan ikon */
+.list-manfaat,
+.list-syarat {
+    list-style: none; /* Hapus bullet/nomor default */
+    padding-left: 0;  /* Reset padding karena akan diatur per item */
+}
+
+.list-manfaat li,
+.list-syarat li {
+    position: relative;
+    padding-left: 35px; /* Memberi ruang untuk ikon */
+}
+
+/* Styling Ikon */
+.list-manfaat li .fa-check-circle,
+.list-syarat li i {
+    position: absolute;
+    left: 0;
+    top: 7px; /* Posisi vertikal disesuaikan */
 }
 
 .list-manfaat li .fa-check-circle {
-    position: absolute;         /* Mengeluarkan ikon dari alur teks */
-    left: 0;                    /* Menempatkan ikon di paling kiri (dalam padding) */
-    top: 6px;                   /* Menyesuaikan posisi vertikal ikon */
     color: #28a745;
-}
-/* Nama class diubah sesuai HTML baru */
-.list-claim-info {
-    max-width: 800px;
-    margin: 0 auto;
-    padding-left: 20px;
-    line-height: 1.8;
-    text-align: justify;
-}
-
-.list-claim-info li {
-    margin-bottom: 15px;
-}
-
-.list-syarat {
-    list-style: none;
-    padding: 0;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.list-syarat li {
-    position: relative;         /* Kunci untuk penempatan ikon */
-    padding-left: 35px;         /* Memberi ruang di kiri untuk ikon */
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    text-align: justify;
 }
 
 .list-syarat li i {
-    position: absolute;         /* Mengeluarkan ikon dari alur teks */
-    left: 0;                    /* Menempatkan ikon di paling kiri (dalam padding) */
-    top: 6px;                   /* Menyesuaikan posisi vertikal ikon */
-    color: #007bff;
+    color: #007bff; /* Warna ikon diseragamkan ke abu-abu netral */
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
 }
 
 footer {
